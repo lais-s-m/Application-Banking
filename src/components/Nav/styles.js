@@ -13,7 +13,7 @@ export const StyledNav = styled.nav`
 
     height: 50px;
     width: 40vw;
-    min-width: 350px;
+    min-width: 300px;
 
     div {
         display: inline-flex;

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const Button = styled.button`
+const StyledButton = styled.button`
     display: inline-flex;
 
     justify-content: center;
@@ -95,4 +95,4 @@ const Button = styled.button`
     }
 `
 
-export default Button;
+export default StyledButton;

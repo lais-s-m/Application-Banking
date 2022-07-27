@@ -12,7 +12,7 @@ export const Container = styled.section`
     margin-top: 16px;
     
     width: 25vw;
-    min-width: 350px;
+    min-width: 300px;
 `
 
 export const RowContainer = styled.div`

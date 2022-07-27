@@ -6,7 +6,7 @@ export const StyledForm = styled.form`
 
     height: 330px;
     width: 25vw;
-    min-width: 350px;
+    min-width: 300px;
 
     padding: 22px;
 

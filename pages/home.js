@@ -16,10 +16,16 @@ import { useEffect, useState } from 'react';
 import TotalMoney from '../src/components/TotalMoney';
 
 export default function Home() {
-  const [ statement, setStatement ] = useState([]);
+  const storageStatement = JSON.parse(localStorage.getItem("NuKenzie@statement"));
+
+  const [ statement, setStatement ] = useState( storageStatement || []);
   const [ tag, setTag ] = useState('todos');
   const [ show, setShow ] = useState(true);
-
+  
+  useEffect(()=> {
+    localStorage.setItem("NuKenzie@statement", JSON.stringify(statement));
+  },[statement])
+  
   useEffect(()=>{
     if (statement == null){
       setShow(true)
@@ -44,6 +50,8 @@ export default function Home() {
     
   const onSubmitFunction = (data) => {
         setStatement([...statement, data]);
+        
+        
     }
   
   const removeCard = (index) => {

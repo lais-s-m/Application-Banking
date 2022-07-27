@@ -17,7 +17,7 @@ export const Container = styled.div`
 
     height: 100px;
     width: 40vw;
-    min-width: 350px;
+    min-width: 300px;
 
     ${(props) => {
             switch(props.typeOfValue){
