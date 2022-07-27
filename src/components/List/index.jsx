@@ -5,7 +5,7 @@ export default function List ({statement, removeCard}) {
 
     return (
         <ul>
-            {statement.map((item, index)=> {
+            {statement && statement.map((item, index)=> {
                 return (
                     <li key={index} id={index}>
                         <Card

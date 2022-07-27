@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -6,16 +7,26 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import GlobalStyle, { ColumnContainer, HomeContainer } from '../styles/GlobalStyle';
 
+import NoCard from '../src/images/no-card.svg';
 import Header from '../src/components/Header';
 import Form from '../src/components/Form';
 import Nav from '../src/components/Nav';
 import List from '../src/components/List';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TotalMoney from '../src/components/TotalMoney';
 
 export default function Home() {
   const [ statement, setStatement ] = useState([]);
   const [ tag, setTag ] = useState('todos');
+  const [ show, setShow ] = useState(true);
+
+  useEffect(()=>{
+    if (statement == null){
+      setShow(true)
+    } else {
+      setShow(false)
+    }
+  }, [statement])
 
   const schema = yup.object().shape({
         description: yup.string().required('Descrição obrigatória'),
@@ -98,6 +109,7 @@ export default function Home() {
             getTag={getTag}
           />
           {filterStatement(tag)}
+          {show && <Image src={NoCard} alt="no card"/>}
         </ColumnContainer>
       </HomeContainer>
     </>  

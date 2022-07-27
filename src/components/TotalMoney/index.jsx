@@ -1,25 +1,20 @@
 import { Container, RowContainer, Text, Title } from "./styles";
 
 export default function TotalMoney ({statement}) {
-    const incomeValues = statement.map((item) => {
+    const values = statement.map((item)=> {
         if (item.typeOfValue === 'entrada'){
-            const value = Number(item.value);
-            return value;
+            return Number(item.value)
+        } else {
+            return (Number(item.value) - 2 * Number(item.value))
         }
     })
-    const outflowValues = statement.map((item) => {
-        if (item.typeOfValue === 'saída'){
-            const value = Number(item.value);
-            return value;
-        }
-    })
-    console.log(incomeValues)
-    console.log(outflowValues)
+    const sum = values.reduce((accumulator, currentValue)=> accumulator + currentValue, 0);
+
     return (
         <Container>
         <RowContainer>
             <Title fontColor='black'>Valor Total: </Title>
-            <Title fontColor='pink'> valor</Title>
+            <Title fontColor='pink'>R${sum}</Title>
         </RowContainer>
         <Text>O valor se refere ao saldo</Text>
     </Container>
