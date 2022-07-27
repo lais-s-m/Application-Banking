@@ -19,8 +19,8 @@ export default function Input ({ label, type, placeholder, example, error, regis
                         <select
                         {...register(name)}
                         >
-                            <option value="income">Entrada</option>
-                            <option value="outflow">Saída</option>
+                            <option value="entrada">Entrada</option>
+                            <option value="saída">Saída</option>
                         </select>
                     </ContainerInput>
                 )

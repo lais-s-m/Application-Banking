@@ -13,8 +13,11 @@ export const StyledNav = styled.nav`
 
     height: 50px;
     width: 40vw;
+    min-width: 350px;
 
     div {
+        display: inline-flex;
+        flex-wrap: nowrap;
 
         h2 {
         font-family: 'Nunito';
@@ -27,6 +30,26 @@ export const StyledNav = styled.nav`
 
         button + button {
             margin-left: 18px;
+        }
+    }
+
+    @media(max-width: 1020px){
+        margin-left: 20px;
+    }
+
+    @media(max-width: 810px){
+        margin: 20px 0px 0px 0px;
+        padding: 10px;
+
+        div {
+
+            h2 {
+                font-size: 14px;
+            }
+
+            button + button {
+                margin-left: 5px;
+            }
         }
     }
 

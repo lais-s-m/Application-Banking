@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -8,24 +9,12 @@ import Button from '../Button';
 
 import { StyledForm } from './styles';
 
-export default function Form () {
-    const schema = yup.object().shape({
-        description: yup.string().required('Descrição obrigatória'),
-        value: yup.string().required('Valor obrigatório'),
-        typeOfValue: yup.string()
-      })
-
-    const {
+export default function Form ( 
+    {   handleSubmit, 
+        onSubmitFunction, 
         register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm ({
-        resolver: yupResolver(schema)
-      });
-    
-    const onSubmitFunction = (data) => {
-        console.log(data);
-    }
+        errors
+    }) {
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmitFunction)}>

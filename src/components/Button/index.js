@@ -1,19 +1,16 @@
 import styled, { css } from "styled-components";
 
 const Button = styled.button`
+    display: inline-flex;
+
+    justify-content: center;
     align-items: center;
 
-    padding: 13px 20px;
     gap: 10px;
 
     border: 2px solid var(--colorPrimary);
     border-radius: 8px;
 
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
     color: #ffff;
 
     transition: 0.5s;
@@ -59,6 +56,43 @@ const Button = styled.button`
         }
     }
 
+    ${(props) => {
+        switch(props.buttonSize){
+            case 'small':
+                return css`
+
+                    font-family: 'Nunito';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 19px;
+
+                    padding: 15px;
+
+                    width: 78px;
+                    height: 40px;
+
+                    @media (max-width: 400px){
+                        font-size: 12px;
+
+                        padding: 0px;
+
+                        width: 65px;
+                    }
+                `
+            default:
+                return css`
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+
+                    padding: 13px 20px;
+                `
+            }
+        }
+    }
 `
 
 export default Button;

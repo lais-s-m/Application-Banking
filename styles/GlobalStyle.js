@@ -82,4 +82,27 @@ export const HomeContainer = styled.div`
     justify-content: space-between;
     
     margin: 50px 10vw 50px 10vw;
+
+    @media(max-width: 1020px){
+        margin: 30px 2vw 30px 2vw;
+        
+    }
+
+    @media(max-width: 810px){
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+
+        margin: 30px 2vw 30px 2vw;
+    }
+`
+
+export const ColumnContainer = styled.div`
+    display: inline-flex;
+    flex-direction: column;
+
+    align-items: center;
 `

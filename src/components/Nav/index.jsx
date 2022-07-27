@@ -1,7 +1,7 @@
 import Button from "../Button";
 import { StyledNav } from "./styles";
 
-export default function Nav () {
+export default function Nav ( { getTag }) {
     return (
         <StyledNav>
             <div>
@@ -10,14 +10,20 @@ export default function Nav () {
             <div>
                 <Button
                     backgroundColor="grey-pink"
+                    buttonSize="small"
+                    onClick={() => getTag('todos')}
                     >Todos
                 </Button>
                 <Button
                     backgroundColor="grey-pink"
+                    buttonSize="small"
+                    onClick={() => getTag('entrada')}
                     >Entradas
                 </Button>
                 <Button
                     backgroundColor="grey-pink"
+                    buttonSize="small"
+                    onClick={() => getTag('saída')}
                     >Despesas
                 </Button>
             </div>
