@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
+import Image from "next/image";
+
 export default createGlobalStyle`
     * {
         margin: 0;
@@ -74,6 +76,20 @@ export const LaunchpageContainer = styled.div`
         }
     }
 
+    @media(max-width: 900px){
+        div {
+            width: 100vw;
+            margin-right: 0px;
+        }
+    }
+
+`
+
+export const LaunchpageImage = styled.div`
+    @media(max-width: 900px){
+        width: 0px;
+        height: 0px;
+    }
 `
 
 export const HomeContainer = styled.div`

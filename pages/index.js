@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import KenzieLogo from '../src/images/launchpage-logo.svg';
 import LaunchpageImg from '../src/images/launchpage-image.svg';
 
 import Button from '../src/components/Button';
-import GlobalStyle, { LaunchpageContainer } from '../styles/GlobalStyle';
+import GlobalStyle, { LaunchpageContainer, LaunchpageImage } from '../styles/GlobalStyle';
 
 export default function Launchpage () {
     return (
@@ -20,7 +20,9 @@ export default function Launchpage () {
                         <Button backgroundColor="pink">Iniciar</Button>
                     </Link>
                 </div>
-                <Image src={LaunchpageImg} alt="launchpage image" />
+                <LaunchpageImage>
+                    <Image src={LaunchpageImg} alt="lauchpage image" layout={"responsive"}/>
+                </LaunchpageImage>
             </LaunchpageContainer>
         </>
         

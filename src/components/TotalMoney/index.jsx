@@ -2,6 +2,7 @@ import { Container, RowContainer, Text, Title } from "./styles";
 
 export default function TotalMoney ({statement}) {
     const transformCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+    
     const values = statement.map((item)=> {
         if (item.typeOfValue === 'entrada'){
             return Number(item.value)
@@ -21,3 +22,4 @@ export default function TotalMoney ({statement}) {
     </Container>
     )
 }
+

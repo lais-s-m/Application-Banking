@@ -16,12 +16,16 @@ import { useEffect, useState } from 'react';
 import TotalMoney from '../src/components/TotalMoney';
 
 export default function Home() {
-  const storageStatement = JSON.parse(localStorage.getItem("NuKenzie@statement"));
 
-  const [ statement, setStatement ] = useState( storageStatement || []);
+  const [ statement, setStatement ] = useState([]);
   const [ tag, setTag ] = useState('todos');
   const [ show, setShow ] = useState(true);
   
+  useEffect(()=> {
+    const storage = JSON.parse(localStorage.getItem("NuKenzie@statement"));
+    setStatement(storage)
+  }, [])
+
   useEffect(()=> {
     localStorage.setItem("NuKenzie@statement", JSON.stringify(statement));
   },[statement])
